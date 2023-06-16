@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.min.css">
+    <title>Login</title>
+</head>
+
+<body class="font-geologica flex flex-col justify-between bg-secondary h-full">
+    <main class="flex gap-20 justify-center items-center pt-40 text-primary phone:flex-col phone:pt-20">
+        <h1 class="text-5xl font-bold text-primary break-words">
+            <a href="/">Smart Growth</a>
+        </h1>
+        <form id="login-form" action="/auth/login" method="post" class="bg-white flex flex-col p-6 gap-5 rounded-lg border-[2px] shadow-lg">
+            <div class="flex flex-col gap-2">
+                <label id="error-message" for="email" class="pl-1 text-red-500"></label>
+                <input id="email" name="email" type="text" placeholder="Email" class="w-80 p-3 border rounded-md shadow-md">
+            </div>
+            <input id="password" name="password" type="password" placeholder="Password" class="w-80 p-3 border rounded-md shadow-md">
+            <button class="bg-accent text-secondary p-2 rounded-md shadow-md font-bold text-lg">
+                <span class="flex justify-center">
+                    Log In
+                </span>
+            </button>
+            <hr>
+            <a role="button" href="signup" class="bg-primary bg-opacity-60 text-secondary p-2 rounded-md shadow-md font-bold text-lg">
+                <span class="flex justify-center">
+                    Sign Up
+                </span>
+            </a>
+        </form>
+        <script src="/scripts/login.js"></script>
+    </main>
+</body>
+</html>

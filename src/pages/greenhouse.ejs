@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>System</title>
+</head>
+<body class="bg-secondary text-primary font-geologica">
+    
+    <%- include('components/navigation.ejs', { user: user }) %>
+    <main class="relative left-60 w-[calc(100%-15rem)] phone:left-20 phone:w-[calc(100%-5rem)] transition-all ease-linear">
+        <div>
+            <img class="w-full h-52 object-cover" src="<%= greenhouse.photo %>" alt="logo">
+        </div>
+        
+        <div class="flex gap-10 w-full items-start p-10 phone:p-5 flex-col">
+            <div class="flex gap-5 justify-center tablet:w-full tablet:flex-col">
+                <p class="flex gap-3 items-center mx-4 text-4xl">
+                    <i class="bx bxs-thermometer"></i>
+                    <span id="temperature" class="text-xl"></span>
+                </p>
+                <p class="flex gap-3 items-center mx-4 text-4xl">
+                    <i class="bx bx-droplet"></i>
+                    <span id="air-humidity" class="text-xl"></span>
+                </p>
+                <p class="flex gap-3 items-center mx-4 text-4xl">
+                    <i class="bx bx-water" ></i>
+                    <span id="soil-humidity" class="text-xl"></span>
+                </p>
+                <a id="fan-on" class="bg-btn-primary py-2 px-5 mx-4 rounded-full text-secondary">
+                    Ventilador: ON
+                </a>
+                <a id="fan-off" class="bg-red-500 py-2 px-5 mx-4 rounded-full text-secondary">
+                    Ventilador: OFF
+                </a>
+                <a id="pump-on" class="bg-btn-primary py-2 px-5 mx-4 rounded-full text-secondary">
+                    Bomba: ON
+                </a>
+                <a id="pump-off" class="bg-red-500 py-2 px-5 mx-4 rounded-full text-secondary">
+                    Bomba: OFF
+                </a>
+                
+            </div>
+            <div class="flex w-full tablet:flex-col">
+                <div class="w-[50%] tablet:w-full">
+                    <canvas id="temp-chart"></canvas>
+                </div>  
+                <div class="w-[50%] tablet:w-full">
+                    <canvas id="humid-chart"></canvas>
+                </div>
+            </div>
+            <canvas id="sohum-chart"></canvas>
+        </div>
+            
+        
+        <script src="/scripts/charts.js"></script>
+    </main>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.min.css">
+    <title>Smart Grow</title>
+</head>
+<body class="bg-secondary text-primary font-geologica">
+    <nav id="navbar" class="sticky top-0 py-3 bg-secondary">
+        <div class="flex justify-between mx-6 phone:flex-col">
+            <div class="flex justify-between">
+                <div class="flex items-center gap-4">
+                    <img class="w-12 rounded-full" src="https://unsplash.it/200/200" alt="logo">
+                    <h1 class="font-medium text-4xl">Smart Growth</h1>
+                </div>
+                <a id="hamburger" href="#" class="text-3xl p-2 hover:-translate-y-1 transition-all ease-linear hidden phone:block">
+                    <i class="bx bx-menu"></i>
+                </a>
+            </div>
+            <div id="hamburger-menu" class="flex gap-4 items-center text-sm font-semibold phone:flex-col phone:hidden phone:bg-primary phone:bg-opacity-10 phone:py-6 phone:px-10 phone:mt-6 phone:items-start rounded-lg">
+                <a href="#" class="hover:-translate-y-1 transition-all ease-linear w-full phone:pt-2">HOME</a>
+                <a href="#" class="hover:-translate-y-1 transition-all ease-linear w-full phone:pt-2">ABOUT</a>
+                <a href="#" class="hover:-translate-y-1 transition-all ease-linear w-full phone:pt-2">PRODUCT</a>
+                <a href="#" class="hover:-translate-y-1 transition-all ease-linear w-full phone:pt-2">CONTACT</a>
+                
+                <% if(!user) { %>
+                <a href="/auth/login" class="bg-btn-secondary px-6 py-3 rounded-xl hover:-translate-y-1 transition-all ease-linear phone:w-full text-center">
+                    Login
+                </a>
+                <a href="/auth/signup" class="bg-btn-primary px-6 py-3 rounded-xl hover:-translate-y-1 transition-all ease-linear phone:w-full text-center">
+                    Signup
+                </a>
+                <% } else { %>
+                <a href="/dashboard" class="bg-btn-primary px-6 py-3 rounded-xl hover:-translate-y-1 transition-all ease-linear phone:w-full text-center">
+                    System
+                </a>
+                <a href="/auth/logout" class="bg-btn-secondary px-6 py-3 rounded-xl hover:-translate-y-1 transition-all ease-linear phone:w-full text-center">
+                    Logout
+                </a>
+                <% } %>
+
+            </div>
+            
+        </div>
+        <script src="scripts/navbar.js"></script>
+    </nav>
+    
+    <main class="flex phone:flex-col items-center justify-evenly mx-20 mt-6 phone:m-10">
+        <div>
+            <h2 class="text-6xl phone:text-center">
+                Welcome to Smart Growth
+            </h2>
+            <br>
+            <h3 class="text-2xl">
+                Automation for your <span class="text-accent font-bold">green</span> house
+            </h3>
+        </div>
+        
+        <img class="w-[50%] phone:w-full" src="images/hero.png" alt="">
+    </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    gh
+</body>
+</html>

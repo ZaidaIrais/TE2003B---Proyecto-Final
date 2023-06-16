@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.min.css">
+    <title>System</title>
+</head>
+<body class="bg-secondary text-primary font-geologica">
+    
+    <%- include('components/navigation.ejs', { user: user }) %>
+    <main class="relative left-60 w-[calc(100%-15rem)] phone:left-20 phone:w-[calc(100%-5rem)] flex flex-col justify-center p-10 phone:p-5 transition-all ease-linear">
+        <h2 class="font-medium text-4xl">
+            Your green houses
+        </h2>
+        <div class="flex flex-wrap gap-4 mt-6 w-full">
+            <% greenhouses.forEach(elem => { %>
+                <a href="/dashboard/<%= elem.id %>" class="shadow-lg bg-primary bg-opacity-5 rounded-lg flex flex-col items-center w-80 phone:w-full">
+                    <img class="w-full h-52 object-cover rounded-t-lg" src="<%= elem.photo %>" alt="logo">
+                    <div class="p-6 w-full h-full flex items-center justify-between">
+                        <h3 class="text-lg font-medium">
+                            <span class="line-clamp-2" title="%Titulo%"><%= elem.name %></span>
+                        </h3>
+                        <i class="bx bxs-chevron-right text-3xl"></i>
+                    </div>
+                </a>
+            <% }); %>
+
+        </div>
+    </main>
+</body>
+</html>
